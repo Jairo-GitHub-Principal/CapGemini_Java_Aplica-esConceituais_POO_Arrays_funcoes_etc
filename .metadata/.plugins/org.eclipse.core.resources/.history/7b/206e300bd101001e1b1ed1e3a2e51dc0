@@ -27,7 +27,6 @@ public class Menu {
 				System.out.println("2 para listar");
 				System.out.println("3 para atualizar");
 				System.out.println("4 para deletar");
-				System.out.println("5 para listar um registro expecifico");
 				escolha = entrada.nextInt();
 				
 				switch (escolha) {

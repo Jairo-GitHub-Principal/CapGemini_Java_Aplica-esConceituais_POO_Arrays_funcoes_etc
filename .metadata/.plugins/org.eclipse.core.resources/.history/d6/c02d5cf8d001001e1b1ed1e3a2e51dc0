@@ -27,7 +27,6 @@ public class Menu {
 				System.out.println("2 para listar");
 				System.out.println("3 para atualizar");
 				System.out.println("4 para deletar");
-				System.out.println("5 para listar um registro expecifico");
 				escolha = entrada.nextInt();
 				
 				switch (escolha) {
@@ -86,18 +85,6 @@ public class Menu {
 					
 					pesD.excluirPessoa(IDpessoa); // passando somente o id, da pessoa em questão
 					
-				break;
-				
-				case 5: 
-					System.out.println("listar um registro especifico");
-					System.out.println("digite o id do regirstro que deseja consultar");
-					int IDespecifico = entrada.nextInt();
-					
-					 // passando somente o id, da pessoa em questão
-					Pessoa pesEspecifica = pesD.consultarPessoaIndividual(IDespecifico);
-					System.out.println("id: " +pesEspecifica.getId());
-					System.out.println("nome: "  +pesEspecifica.getNome());
-					System.out.println("email: " +pesEspecifica.getEmail());
 				break;
 				default:
 					System.out.println("numero "+ escolha+" é um menu invalido ");
