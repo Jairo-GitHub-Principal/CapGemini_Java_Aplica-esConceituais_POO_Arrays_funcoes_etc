@@ -1,0 +1,12 @@
+package Embarque;
+
+public class PrincipalComGeneric {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+
+	}
+
+}

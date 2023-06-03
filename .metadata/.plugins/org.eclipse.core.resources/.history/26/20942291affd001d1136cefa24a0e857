@@ -1,0 +1,28 @@
+package FormatarDatas;
+
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+
+
+
+public class FormatarDatas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// formatar Data
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		// Criar uma instancia para entrada de dados
+		Scanner entrada = new Scanner(System.in); // instancia da classe scanner para entrada de dados
+		
+		System.out.println("digite uma data com ano mês e dia");
+		String dat = entrada.nextLine();
+		System.out.println("Data digitada: "+dat);
+		
+		//String datFormatada = sdf.format(dat);
+		//System.out.println("Data formatada: "+datFormatada);
+		
+
+	}
+
+}

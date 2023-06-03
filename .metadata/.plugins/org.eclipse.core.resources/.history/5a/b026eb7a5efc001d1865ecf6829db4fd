@@ -1,0 +1,15 @@
+package AulaAnotations;
+
+import java.lang.annotation.Inherited;
+
+public class DeprecatedTeste {
+	void visualizar() {
+		System.out.println("metodo visualização");
+	}
+	
+	
+	void exibir(){
+		
+		System.out.println("mostrando que o metodo exibir é normal");
+	}
+}

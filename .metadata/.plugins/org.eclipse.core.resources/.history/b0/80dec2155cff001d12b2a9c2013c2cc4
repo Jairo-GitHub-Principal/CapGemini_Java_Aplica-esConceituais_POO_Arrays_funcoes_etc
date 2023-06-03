@@ -1,0 +1,49 @@
+package cadastro;
+
+import java.util.List;
+import java.util.Scanner;
+
+import cadastro.Pessoa;
+
+
+public class Menu {
+	public static void main(String[] args) throws Exception {
+		PessoaDao pesD = new PessoaDao();
+		
+			// Incluir uma pessoa
+		/*	
+			Scanner entrada = new Scanner(System.in); // instancia da classe scanner para entradda de dados
+			System.out.println("Digite o seu nome");// pedir ao usuario para informar seu noma
+			String nome = entrada.nextLine(); // ler o nome informado pelo usuario e armazenar na string nome
+			
+			System.out.println("Digite o seu Email");
+			String email = entrada.nextLine();
+			Pessoa p = new Pessoa(nome,email); // instanciar a classe pessoa e passar as string nome e email para o metodo contrutor, e esses dados serão armazenado nas propriedades da classe pessoa
+			
+			
+			pesD.incluirPessoa(p);// chamar o metodo incluirPessao de pessoaDao e passar para ele o objeto pessoa, para que as propriedades armazenadas em pessoa "nome" , "email" possa ser persistido no DB
+			*/
+			
+			// listar pessoas
+			
+				List<Pessoa> listaPessoas = pesD.ListarPessoas();
+				
+				for(Pessoa p: listaPessoas){
+					int IDint= p.getId();
+					String ID= Integer.toString(IDint);
+					System.out.println("id: " + ID);
+					System.out.println("nome: "  +p.getNome());
+					System.out.println("email: " +p.getEmail());
+					System.out.println("--------------------------------------------------");
+					
+				}
+				
+			
+		
+		
+			
+		
+		
+	}
+
+}

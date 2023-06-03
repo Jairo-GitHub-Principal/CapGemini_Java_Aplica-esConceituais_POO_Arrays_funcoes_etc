@@ -1,0 +1,13 @@
+package FormatarDatas;
+
+import java.util.Scanner;
+
+public class FormatarDatas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner entrada = 
+
+	}
+
+}

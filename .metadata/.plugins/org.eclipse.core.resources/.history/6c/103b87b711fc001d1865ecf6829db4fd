@@ -1,0 +1,45 @@
+package Embarque;
+
+import java.util.Iterator;
+import java.util.Scanner;
+
+import Controle.Aeronave;
+
+/* informar a quantidade de aeronaves no patio, o nr dos voos por ordem de chegada
+ * a ordem de decolagem é FIFO(first in=primeiro que entra, first out= primeiro que sai ) ou seja o primeiro dado que entra é o primeiro dado que sai, regra de fila
+ * */
+public class Principal {
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		Aeronave air = new Aeronave();
+		
+
+		System.out.println("__________________________________________________________________");
+		System.out.println("Informe o numero de aeronaves que vão decolar");
+		int nrAeronave = sc.nextInt();
+		System.out.println("numero de aeronave pra decolar: "+nrAeronave);
+		for (int i = 0; i < nrAeronave; i++) {
+			System.out.println("o I esta valendo: "+ i);
+			
+			System.out.println("Informe o numero do Voo da aeronave n° "+ i);
+			int  nrVoo = sc.nextInt();
+			
+			air.addVoo(nrVoo);
+			System.out.println("o I esta valendo: "+ i);
+			System.out.println("__________________________________________________________________");
+		}
+		
+		System.out.println("O primeiro a decolar vai ser o nr: "+ air.primeiroVoo());
+		air.listarVoos();
+		sc.close();
+		
+		
+	}
+
+}

@@ -1,0 +1,19 @@
+package cadastro;
+
+
+import com.mysql.cj.xdevapi.PreparableStatement;
+
+import Cadastros.Pessoa;
+
+public class PessoaDao extends Dao {
+	public void incluirPessoa(Pessoa p) throws Exception {
+		open();
+		stmt = (PreparableStatement) con.prepareStatement("insert into pessoa values(?,?,?)");
+		stmt.setInt(1, p.getId());
+		stmt.setString(2, p.getNome());
+		stmt.setString(3, p.getEmail());
+		stmt.execute();
+		stmt.close();
+		close();
+	}
+}

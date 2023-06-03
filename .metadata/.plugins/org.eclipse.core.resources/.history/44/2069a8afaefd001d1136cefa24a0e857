@@ -1,0 +1,17 @@
+package FormatarDatas;
+
+import java.util.Scanner;
+
+public class FormatarDatas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner entrada = new Scanner(System.in); // instancia da classe scanner para entrada de dados
+		
+		System.out.println("digite uma data com ano mês e dia");
+		String dat = entrada.next();
+		
+
+	}
+
+}

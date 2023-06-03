@@ -1,0 +1,8 @@
+package AulaAnotations;
+
+public class DeprecatedTeste {
+	void visualizar() {
+		
+	}
+	
+}

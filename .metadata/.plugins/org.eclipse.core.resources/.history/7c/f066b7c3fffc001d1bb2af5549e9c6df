@@ -1,0 +1,41 @@
+package Datas;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
+import java.util.TimeZone;
+
+public class DataSimpleDateFormat {
+
+	public static void main(String[] args) throws ParseException {// throws ParseException é nescessario para o parse de sdf_format1 e sdf_format2
+		// TODO Auto-generated method stub
+		// Usando SDF-Simple Date Format
+		SimpleDateFormat sdf_Formato1=new SimpleDateFormat("dd/MM/yyyy"); //formatar para  dia mês e ano
+		SimpleDateFormat sdf_Formato2=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");// formatar para  dia mês e ano, hora minuto e segundo
+		SimpleDateFormat sdf_Formato3=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");// formatar para dia mês e ano, hora minuto e segundo____por que?
+		
+		sdf_Formato3.setTimeZone(TimeZone.getTimeZone("GMT")); // greenwich mean time(GMT)
+		
+		Date x1 = new Date(29/10/2021); // data fixa
+		Date x2 =new Date(System.currentTimeMillis());// data em milissegundos
+		Date x3 = new Date(0L);
+		Date x4 = new Date(1000L * 60L*5L); // montagem da data baseada em calculos
+		Date y1 = (Date)sdf_Formato1.parse("29/12/2021");// Converter em data e formatando a data com o sdf_formato1
+		Date y2 = (Date)sdf_Formato2.parse("2021/12/2021 16:32:55");//Converter em data e formatando a data com sdf_formato2
+		Date y3 = (Date)Date.from(Instant.parse("2021-12-29T16:32:55Z")); // Converter para data e formatar Date.from(instant.parse)
+		Date dataAtual = new Date();
+		System.out.println("x1: "+x1);
+		System.out.println("x2: "+x2);
+		System.out.println("x3: "+x3);
+		System.out.println("x4: "+x4);
+		System.out.println("y1: "+y1);
+		System.out.println("y2: "+y2);
+		System.out.println("y3: "+y3);
+		System.out.println("Data do sistema : "+dataAtual);
+		String dataAtualFormatada = sdf_Formato1.format(new Date()); // pegando a data new date e formatar para dia mes e ano
+		System.out.println("data do sistema formatado para dia mes e ano: "+dataAtualFormatada);
+		
+	}
+
+}

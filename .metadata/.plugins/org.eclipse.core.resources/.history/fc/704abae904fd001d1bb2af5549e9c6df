@@ -1,0 +1,28 @@
+package Datas;
+
+import java.util.Calendar;
+
+public class ClasseCalendario {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// recuperar data com a classe calendar
+		System.out.println("Recuperar a data com a classe calendar");
+		Calendar cal = Calendar.getInstance();
+		System.out.println("data e hora atual: "+ cal.getTime()+"\n");
+		
+		System.out.println("ano " +cal.get(Calendar.YEAR) );
+		System.out.println("dia do mês "+cal.get(Calendar.DAY_OF_MONTH));
+		
+		System.out.println("Alterar a data e hora com metodo set");
+		
+		//cal.set(Calendar.YEAR,2023);
+		System.out.println();
+		
+		
+		
+
+	}
+
+}

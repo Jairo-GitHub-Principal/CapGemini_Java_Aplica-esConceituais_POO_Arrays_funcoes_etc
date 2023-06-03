@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+public class entradaDeDados {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//entrada de dados
+		
+		int idade ;
+		
+		// entrada de dados com JOptionPane
+		String idadeUser = JOptionPane.showInputDialog(args); // args ou null funciona igual
+		String idadeUser2 = JOptionPane.showInputDialog(null);
+		idade = Integer.parseInt(idadeUser);
+		
+		JOptionPane.showMessageDialog(null, idadeUser);
+		
+		JOptionPane.showMessageDialog(null,"vc tem " + idadeUser2+" anos","ATENÇÃO !!",2);//obs.: o "Atenção!!" se refere ao titulo da caixa de informação,
+																						  // ja o ,1 depois de atenção se refere ao icone informativo que a parece na caixa di mensagem
+																						  // 1=i de informação 2= ! dentro de um triangulo
+																						  // 3=? e por ai vai	
+		
+		// entrada de dados com Scanner
+		
+		
+		Scanner entrada = new Scanner(System.in); // cria uma instancia da classe Scanner, para atravéz dela chamar os metodos de entrada 
+		System.out.println("informe seu Nome:");
+		String nome = entrada.nextLine(); // metodo de entrada para String
+		System.out.println("informe seu ID:");
+		int id = entrada.nextInt();
+	  
+		System.out.println("Cliente nome: "+nome+" ID: "+id);
+	
+	
+	}
+
+}
