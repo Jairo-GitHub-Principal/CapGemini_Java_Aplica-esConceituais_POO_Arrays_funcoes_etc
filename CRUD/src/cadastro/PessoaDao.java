@@ -47,7 +47,46 @@ public class PessoaDao extends Dao {
 		}
 	}
 	
+	// Crud Lista uma pessoa através do id
+	public Pessoa consultarPessoaIndividual(int id)throws Exception{
+		open();
+		stmt = con.prepareStatement("Select * from pessoa where id = ?");
+		stmt.setInt(1, id);// nessa linha o 1 se refere ao interrogação sendo atribuido ao id, no comando sql da linha de cima
+		rs=stmt.executeQuery();
+		Pessoa p = null;
+		if(rs.next()) {
+			p=new Pessoa();
+			p.setId(rs.getInt("id"));
+			p.setNome(rs.getString("nome"));
+			p.setEmail(rs.getString("email"));
+			
+		}else {
+			System.out.println("Registro não encontrado");
+		}
+		close();
+		return p;
+	}
 	// Crud Atualizar
+	public void alterarPessoa(Pessoa pessoa) throws Exception {
+		open();
+		stmt =  con.prepareStatement("UPDATE pessoa SET nome=?,email=? WHERE id = ?");
+		stmt.setString(1, pessoa.getNome());
+		stmt.setString(2, pessoa.getEmail());
+		stmt.setInt(3, pessoa.getId());
+		stmt.execute();
+		stmt.close();
+		close();
+	}
+	
 	// Crud Deletar
+	
+	public void excluirPessoa(int ID)throws Exception{
+		open();
+		stmt = con.prepareStatement("DELETE FROM pessoa WHERE id = ?");
+		stmt.setInt(1,ID);
+		stmt.execute();
+		stmt.close();
+		close();
+	}
 	
 }

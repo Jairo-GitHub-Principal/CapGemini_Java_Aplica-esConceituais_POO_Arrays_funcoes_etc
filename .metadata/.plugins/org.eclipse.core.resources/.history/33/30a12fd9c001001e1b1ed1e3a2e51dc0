@@ -1,0 +1,114 @@
+package cadastro;
+
+import java.util.List;
+import java.util.Scanner;
+
+import cadastro.Pessoa;
+
+
+public class Menu {
+	public static void main(String[] args) throws Exception {
+		PessoaDao pesD = new PessoaDao();
+		
+			
+			
+	
+		Scanner entrada = new Scanner(System.in); // instancia da classe scanner para entradda de dados
+		
+		String decisao;
+		int escolha = 0;
+		
+		while(decisao =="m"); // s para sair {// extrutura do{}while() laço de repetição do{}while(), vai repetir a inicializaçã odo programa enquanto a variavel for igual a s
+			// Incluir uma pessoa
+			
+				
+				System.out.println("1 para cadastrar");
+				System.out.println("2 para listar");
+				System.out.println("3 para atualizar");
+				System.out.println("4 para deletar");
+				escolha = entrada.nextInt();
+				
+				switch (escolha) {
+				case 1: 
+					System.out.println("cadastrar");
+					System.out.println("Digite o seu nome");// pedir ao usuario para informar seu noma
+					String nome = entrada.next(); // ler o nome informado pelo usuario e armazenar na string nome
+					
+					System.out.println("Digite o seu Email");
+					String email = entrada.next();
+					Pessoa p = new Pessoa(nome,email); // instanciar a classe pessoa e passar as string nome e email para o metodo contrutor, e esses dados serão armazenado nas propriedades da classe pessoa
+					
+					
+					pesD.incluirPessoa(p);// chamar o metodo incluirPessao de pessoaDao e passar para ele o objeto pessoa, para que as propriedades armazenadas em pessoa "nome" , "email" possa ser persistido no DB
+					
+				break;
+				
+				case 2: 
+					System.out.println("listar");
+					// listar pessoas
+					
+					List<Pessoa> listaPessoas = pesD.ListarPessoas();
+					
+					for(Pessoa pList: listaPessoas){
+																
+						System.out.println("id: " +pList.getId());
+						System.out.println("nome: "  +pList.getNome());
+						System.out.println("email: " +pList.getEmail());
+						System.out.println("--------------------------------------------------");
+						
+					}
+				break;
+				
+				case 3: 
+					System.out.println("atualizar");
+	// atualizar pessoa
+					
+					System.out.println("digite o id do registro que deseja alterar");
+					int ID = entrada.nextInt();
+					
+					System.out.println("digite o novo NOME ");
+					String nomeUpdate =  entrada.next();
+					Pessoa pes = pesD.consultarPessoaIndividual(ID);
+					if(pes != null) {
+						pes.setNome(nomeUpdate);
+						pesD.alterarPessoa(pes);
+						pesD.ListarPessoas();
+									
+					}
+				break;
+				
+				case 4: 
+					System.out.println("deletar");
+				break;
+				default:
+					System.out.println("numero "+ escolha+" é um menu invalido ");
+				}
+				
+				System.out.println("digite(S) para sair do programa");
+				System.out.println("digite(M) para voltar ao menu principal");
+				decisao = entrada.next();
+				
+							
+				
+		}
+		   
+			
+			
+		
+			
+			
+			
+			
+				
+				
+				
+				
+			
+		
+		
+			
+		
+		
+	}
+
+}
